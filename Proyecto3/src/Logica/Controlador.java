@@ -29,6 +29,7 @@ public class Controlador {
         
     }
     
+    /*----------metodos del servidor---------*/
     public void ConeccionCliente(String eUsuario,String Contrasenia){
         Cliente miCliente = new Cliente(this);
         boolean temp = miCliente.ConeccionUsuario(eUsuario, Contrasenia);
