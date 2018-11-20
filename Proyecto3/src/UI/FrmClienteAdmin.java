@@ -5,6 +5,7 @@
  */
 package UI;
 
+import Logica.main;
 import javax.swing.JOptionPane;
 
 /**
@@ -178,7 +179,8 @@ public class FrmClienteAdmin extends javax.swing.JFrame {
                 jcbUsuarioCaracter.getSelectedIndex());
                 System.out.println(Contasenia.length());
                 if(Contasenia.length()>=7 && Contasenia.length()<=12){
-                   
+                    main.miControlador.ConeccionAdministradorNuevoUsuario(usuario, Contasenia);
+                    
                 }else{
                      JOptionPane.showMessageDialog(this,"La Contraseña: "+Contasenia
                             +"\nTiene un tamaño de:"+ Contasenia.length()
@@ -248,7 +250,18 @@ public class FrmClienteAdmin extends javax.swing.JFrame {
         
     
     }
-    
+
+    public void NuevoUsuarioAceptado(){
+        JOptionPane.showMessageDialog(this, "Nuevo usuario aceptado");
+        jtfUsuarioNumero.setText("");
+        jtfUsuarioTexto.setText("");
+        jtfUsuarioUsuario.setText("");
+    }
+
+    public void NuevoUsuarioDenegado(){
+        JOptionPane.showMessageDialog(this, "Nuevo usuario No fue aceptado");
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrearUsuario;

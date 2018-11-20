@@ -144,4 +144,18 @@ public class ControladorServidor {
         return false;
     }
     
+    public boolean AgregarUsuario(Usuario nuevoUsuario){
+        System.out.println("Se quiere agregar a un nuevo usuario");
+        for(Usuario temp :ListaUsuarios){
+            if(temp.getUsuario().equals(nuevoUsuario.getUsuario())){
+                System.out.println("El nuevo usuario fue rechasado");
+                return false;
+            }
+        }
+        
+        ListaUsuarios.add(nuevoUsuario);
+        System.out.println("El nuevo usuario fue agregado");
+        EscribirArchivo();
+        return true;
+    }
 }

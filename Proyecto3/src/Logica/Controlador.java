@@ -35,6 +35,12 @@ public class Controlador {
         
     }
     
+    public void ConeccionAdministradorNuevoUsuario(String eUsuario,String Contrasenia){
+        Cliente miCliente = new Cliente(this);
+        boolean temp = miCliente.ConeccionAdminNuevoUsuario(eUsuario, Contrasenia);
+        
+    }
+    
     public void VentanaAdmin(){
         miVentana.dispose();
         miVentana= new FrmClienteAdmin();
@@ -47,5 +53,14 @@ public class Controlador {
         miVentana.setVisible(true);
     }
     
+    public void NuevoUsuarioAceptado(){
+        FrmClienteAdmin temp = (FrmClienteAdmin) miVentana;
+        temp.NuevoUsuarioAceptado();
+    }
+    
+    public void NuevoUsuarioDenegado(){
+        FrmClienteAdmin temp = (FrmClienteAdmin) miVentana;
+        temp.NuevoUsuarioDenegado();
+    }
     
 }

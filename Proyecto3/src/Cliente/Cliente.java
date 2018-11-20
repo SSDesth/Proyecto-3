@@ -6,6 +6,7 @@
 package Cliente;
 
 import Logica.Controlador;
+import Logica.main;
 import java.io.*;
 import java.net.*;
 import java.util.logging.Level;
@@ -124,48 +125,47 @@ public class Cliente {
             cliente = new Socket("localhost", 9998);
             entrada = new DataInputStream(cliente.getInputStream());
             salida = new DataOutputStream(cliente.getOutputStream());
-            
+
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "No se encontro ningun\n"
                     + "servidor activo", "Alerta", 0);
         }
     }
+
     /**
      * Metodo encargado de la coneccion con el servidor y ademas inicializar el
      * hilo de ejecucion
      */
-    public boolean ConeccionUsuario(String eUsuario,String Contrasenia) {
+    public boolean ConeccionUsuario(String eUsuario, String Contrasenia) {
         try {//Manejo de erroroes
             //(IP , Puerto)
             cliente = new Socket("localhost", 9998);
             entrada = new DataInputStream(cliente.getInputStream());
             salida = new DataOutputStream(cliente.getOutputStream());
-            
-            if(eUsuario.equals("Admin")){
+
+            if (eUsuario.equals("Admin")) {
                 salida.writeInt(0);
                 salida.writeUTF(eUsuario);
                 salida.writeUTF(Contrasenia);
-                if(entrada.readInt()==1){
+                if (entrada.readInt() == 1) {
                     System.out.println("Admin Aceptado");
                     micontrolador.VentanaAdmin();
-                }
-                else{
+                } else {
                     System.out.println("Admin Denegado");
                 }
                 return true;
-            }else{
+            } else {
                 salida.writeInt(1);
                 salida.writeUTF(eUsuario);
                 salida.writeUTF(Contrasenia);
-                if(entrada.readInt()==1){
+                if (entrada.readInt() == 1) {
                     System.out.println("Usuario Aceptado");
                     micontrolador.VentanaUsuario();
-                }
-                else{
+                } else {
                     System.out.println("Usuario Denegado");
                 }
             }
-            
+
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "No se encontro ningun\n"
                     + "servidor activo", "Alerta", 0);
@@ -173,5 +173,34 @@ public class Cliente {
         return false;
     }
 
-    
+    /**
+     * Metodo encargado de la coneccion con el servidor y ademas inicializar el
+     * hilo de ejecucion
+     */
+    public boolean ConeccionAdminNuevoUsuario(String eUsuario, String Contrasenia) {
+        try {//Manejo de erroroes
+            //(IP , Puerto)
+            cliente = new Socket("localhost", 9998);
+            entrada = new DataInputStream(cliente.getInputStream());
+            salida = new DataOutputStream(cliente.getOutputStream());
+
+            salida.writeInt(2);
+            salida.writeUTF(eUsuario);
+            salida.writeUTF(Contrasenia);
+            if (entrada.readInt() == 1) {
+                System.out.println("Usuario Creado");
+                main.miControlador.NuevoUsuarioAceptado();
+                return true;
+            } else {
+                System.out.println("El Usuario no pudo ser creado");
+                main.miControlador.NuevoUsuarioDenegado();
+            }
+
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, "No se encontro ningun\n"
+                    + "servidor activo", "Alerta", 0);
+        }
+        return false;
+    }
+
 }
