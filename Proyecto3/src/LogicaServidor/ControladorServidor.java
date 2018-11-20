@@ -158,4 +158,28 @@ public class ControladorServidor {
         EscribirArchivo();
         return true;
     }
+    
+    public String UsuariosActuales(){
+        String salida="";
+        for(Usuario temp:ListaUsuarios){
+            if(!temp.getUsuario().equals("Admin")){
+                salida+=temp.getUsuario()+",";
+            }
+        }
+        System.out.println(salida);
+        return salida;
+    }
+    
+    public boolean EliminarUsuario(String UsuarioPorEliminar){
+        for(Usuario temp:ListaUsuarios){
+            if(temp.getUsuario().equals(UsuarioPorEliminar)){
+                
+                ListaUsuarios.remove(temp);
+                EscribirArchivo();
+                return true;
+            }
+        }
+        return false;
+    }
+    
 }

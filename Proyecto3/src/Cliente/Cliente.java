@@ -149,7 +149,10 @@ public class Cliente {
                 salida.writeUTF(Contrasenia);
                 if (entrada.readInt() == 1) {
                     System.out.println("Admin Aceptado");
-                    micontrolador.VentanaAdmin();
+                    String EntadaUsuarios = entrada.readUTF();
+                    String[] ListaUsuarios= EntadaUsuarios.split(",");
+                    System.out.println(ListaUsuarios);
+                    micontrolador.VentanaAdmin(ListaUsuarios);
                 } else {
                     System.out.println("Admin Denegado");
                 }
@@ -203,4 +206,33 @@ public class Cliente {
         return false;
     }
 
+    /**
+     * Metodo encargado de la coneccion con el servidor y ademas inicializar el
+     * hilo de ejecucion
+     */
+    public boolean ConeccionAdminEliminarUsuario(String eUsuario) {
+        try {//Manejo de erroroes
+            //(IP , Puerto)
+            cliente = new Socket("localhost", 9998);
+            entrada = new DataInputStream(cliente.getInputStream());
+            salida = new DataOutputStream(cliente.getOutputStream());
+
+            salida.writeInt(3);
+            salida.writeUTF(eUsuario);
+            
+            if (entrada.readInt() == 1) {
+                System.out.println("Usuario Eliminado");
+                main.miControlador.EliminarUsuarioAceptado();
+                return true;
+            } else {
+                System.out.println("El Usuario no pudo ser Eliminado");
+                main.miControlador.EliminarUsuarioDenegado();
+            }
+
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, "No se encontro ningun\n"
+                    + "servidor activo", "Alerta", 0);
+        }
+        return false;
+    }
 }

@@ -41,9 +41,15 @@ public class Controlador {
         
     }
     
-    public void VentanaAdmin(){
+    public void ConeccionAdministradorEliminarUsuario(String eUsuario){
+        Cliente miCliente = new Cliente(this);
+        boolean temp = miCliente.ConeccionAdminEliminarUsuario(eUsuario);
+        
+    }
+    
+    public void VentanaAdmin(String[] ListaUsuarios){
         miVentana.dispose();
-        miVentana= new FrmClienteAdmin();
+        miVentana= new FrmClienteAdmin(ListaUsuarios);
         miVentana.setVisible(true);
     }
     
@@ -63,4 +69,20 @@ public class Controlador {
         temp.NuevoUsuarioDenegado();
     }
     
+    public void EliminarUsuarioAceptado(){
+        FrmClienteAdmin temp = (FrmClienteAdmin) miVentana;
+        temp.EliminarUsuarioAceptado();
+    }
+    
+    public void EliminarUsuarioDenegado(){
+        FrmClienteAdmin temp = (FrmClienteAdmin) miVentana;
+        temp.EliminarUsuarioDenegado();
+    }
+    
+    public void RegrezarLoging(){
+        miVentana.dispose();
+        FrmClienteLogin temp = new FrmClienteLogin();
+        temp.setVisible(true);
+        miVentana = temp;
+    }
 }
