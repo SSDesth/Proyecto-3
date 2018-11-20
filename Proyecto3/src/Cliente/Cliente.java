@@ -142,12 +142,28 @@ public class Cliente {
             salida = new DataOutputStream(cliente.getOutputStream());
             
             if(eUsuario.equals("Admin")){
-                
-                return true;
-            }else{
-                salida.writeInt(2);
+                salida.writeInt(0);
                 salida.writeUTF(eUsuario);
                 salida.writeUTF(Contrasenia);
+                if(entrada.readInt()==1){
+                    System.out.println("Admin Aceptado");
+                    micontrolador.VentanaAdmin();
+                }
+                else{
+                    System.out.println("Admin Denegado");
+                }
+                return true;
+            }else{
+                salida.writeInt(1);
+                salida.writeUTF(eUsuario);
+                salida.writeUTF(Contrasenia);
+                if(entrada.readInt()==1){
+                    System.out.println("Usuario Aceptado");
+                    micontrolador.VentanaUsuario();
+                }
+                else{
+                    System.out.println("Usuario Denegado");
+                }
             }
             
         } catch (IOException ex) {

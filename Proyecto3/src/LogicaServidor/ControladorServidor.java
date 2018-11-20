@@ -27,7 +27,26 @@ public class ControladorServidor {
         this.ListaUsuarios = new ArrayList<Usuario>();
     }
 
+    public JFrame getMiVentana() {
+        return miVentana;
+    }
+
+    public void setMiVentana(JFrame miVentana) {
+        this.miVentana = miVentana;
+    }
+
+    public List<Usuario> getListaUsuarios() {
+        return ListaUsuarios;
+    }
+
+    public void setListaUsuarios(List<Usuario> ListaUsuarios) {
+        this.ListaUsuarios = ListaUsuarios;
+    }
+    
+    
+
     public void IniciarServidor() {
+        //ListaUsuarios.add(new Usuario("Admin", "123Adm$"));
         DesencriptadorPorLetra(EncriptadorPorLetra("?$#@!HOLA995"));
         CargarArchivo();
         EscribirArchivo();
@@ -105,5 +124,24 @@ public class ControladorServidor {
         return salida;
     }
 
+    public boolean ValidarUsuario(String eUsuario,String Contrasenia){
+        for(Usuario temp:ListaUsuarios){
+            if(temp.getUsuario().equals(eUsuario) && 
+                    temp.getContrasena().equals(Contrasenia)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean ValidarAdministrador(String eUsuario,String Contrasenia){
+        for(Usuario temp:ListaUsuarios){
+            if(eUsuario.equals("Admin") && 
+                   Contrasenia.equals("123Adm$")){
+                return true;
+            }
+        }
+        return false;
+    }
     
 }

@@ -6,7 +6,9 @@
 package Logica;
 
 import Cliente.Cliente;
+import UI.FrmClienteAdmin;
 import UI.FrmClienteLogin;
+import UI.FrmClienteVentanaUsuario;
 import javax.swing.JFrame;
 
 /**
@@ -33,6 +35,17 @@ public class Controlador {
         
     }
     
+    public void VentanaAdmin(){
+        miVentana.dispose();
+        miVentana= new FrmClienteAdmin();
+        miVentana.setVisible(true);
+    }
+    
+    public void VentanaUsuario(){
+        miVentana.dispose();
+        miVentana= new FrmClienteVentanaUsuario();
+        miVentana.setVisible(true);
+    }
     
     
 }

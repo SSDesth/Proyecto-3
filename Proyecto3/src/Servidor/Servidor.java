@@ -5,7 +5,9 @@
  */
 package Servidor;
 
+import LogicaServidor.mainServidor;
 import UI.FrmServidor;
+import datosServidor.Usuario;
 import java.io.*;
 import java.net.*;
 import java.util.logging.Level;
@@ -44,9 +46,44 @@ public class Servidor {
                 entrada=new DataInputStream(cliente1.getInputStream());
                 salida=new DataOutputStream(cliente1.getOutputStream());
                 
-                    entrada.readInt();
+                switch(entrada.readInt()){
+                    //Loging Admin
+                    case 0:
+                        String Administrador= entrada.readUTF();
+                        String ContraseniaAdmin= entrada.readUTF();
+                        if(mainServidor.miControlador.ValidarAdministrador(Administrador,
+                                ContraseniaAdmin)){
+                            salida.writeInt(1);
+                        }
+                        else{
+                            salida.writeInt(0);
+                        }
+                        break;
+                    //Loging Usuario
+                    case 1:
+                        String entradaUsuario= entrada.readUTF();
+                        String entradaContrasenia= entrada.readUTF();
+                        if(mainServidor.miControlador.ValidarUsuario(entradaUsuario,
+                                entradaContrasenia)){
+                            salida.writeInt(1);
+                        }
+                        else{
+                            salida.writeInt(0);
+                        }
+                        break;
+                    //Crear Usuario
+                    case 2:
+                        String UsuarioNuevo= entrada.readUTF();
+                        String ContraseniaNueva= entrada.readUTF();
+                        mainServidor.miControlador.getListaUsuarios().add(
+                            new Usuario(UsuarioNuevo, ContraseniaNueva));
+                        System.out.println(mainServidor.miControlador.getListaUsuarios().size());
+                        
+                        break;
+                }
+                    /*
                     EscribirMensajeServidor(entrada.readUTF());
-                    EscribirMensajeServidor(entrada.readUTF());
+                    EscribirMensajeServidor(entrada.readUTF());*/
                 /*
                 //Le dice al cliente que va a decirle su numero de jugador
                 hiloServidor.getSalida().writeInt(0);
