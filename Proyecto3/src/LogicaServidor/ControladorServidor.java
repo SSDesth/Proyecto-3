@@ -33,11 +33,12 @@ public class ControladorServidor {
         EscribirArchivo();
         
         System.out.println(ListaUsuarios.get(0).toString());
-        /*
+        
         FrmServidor temp = new FrmServidor();
         temp.setVisible(true);
         temp.IniciarServidor();
-        miVentana=temp;*/
+        miVentana=temp;
+        
     }
 
     public void CargarArchivo() {

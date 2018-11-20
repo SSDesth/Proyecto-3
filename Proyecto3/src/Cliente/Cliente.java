@@ -129,7 +129,32 @@ public class Cliente {
             JOptionPane.showMessageDialog(null, "No se encontro ningun\n"
                     + "servidor activo", "Alerta", 0);
         }
-        
+    }
+    /**
+     * Metodo encargado de la coneccion con el servidor y ademas inicializar el
+     * hilo de ejecucion
+     */
+    public boolean ConeccionUsuario(String eUsuario,String Contrasenia) {
+        try {//Manejo de erroroes
+            //(IP , Puerto)
+            cliente = new Socket("localhost", 9998);
+            entrada = new DataInputStream(cliente.getInputStream());
+            salida = new DataOutputStream(cliente.getOutputStream());
+            
+            if(eUsuario.equals("Admin")){
+                
+                return true;
+            }else{
+                salida.writeInt(2);
+                salida.writeUTF(eUsuario);
+                salida.writeUTF(Contrasenia);
+            }
+            
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, "No se encontro ningun\n"
+                    + "servidor activo", "Alerta", 0);
+        }
+        return false;
     }
 
     

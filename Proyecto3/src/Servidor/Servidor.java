@@ -40,12 +40,20 @@ public class Servidor {
                 //Queda a la espera del primer cliente
                 cliente1 = ss.accept();
                 System.out.println("Cliente Conectado");
+                
+                entrada=new DataInputStream(cliente1.getInputStream());
+                salida=new DataOutputStream(cliente1.getOutputStream());
+                
+                    entrada.readInt();
+                    EscribirMensajeServidor(entrada.readUTF());
+                    EscribirMensajeServidor(entrada.readUTF());
                 /*
                 //Le dice al cliente que va a decirle su numero de jugador
                 hiloServidor.getSalida().writeInt(0);
                 //le envia al cliente su numero de jugador
                 hiloServidor.getSalida().writeInt(1);
                 */
+                
                 
             }
         } catch (IOException ex) {

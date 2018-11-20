@@ -5,6 +5,8 @@
  */
 package Logica;
 
+import Cliente.Cliente;
+import UI.FrmClienteLogin;
 import javax.swing.JFrame;
 
 /**
@@ -12,5 +14,25 @@ import javax.swing.JFrame;
  * @author SSDesth
  */
 public class Controlador {
-    private JFrame miventana;
+    private JFrame miVentana;
+    
+    
+    public Controlador() {
+    }
+    
+    
+    public void IniciarPrograma(){
+        miVentana= new FrmClienteLogin();
+        miVentana.setVisible(true);
+        
+    }
+    
+    public void ConeccionCliente(String eUsuario,String Contrasenia){
+        Cliente miCliente = new Cliente(this);
+        boolean temp = miCliente.ConeccionUsuario(eUsuario, Contrasenia);
+        
+    }
+    
+    
+    
 }
