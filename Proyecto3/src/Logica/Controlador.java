@@ -10,8 +10,16 @@ import UI.FrmClienteAdmin;
 import UI.FrmClienteLogin;
 import UI.FrmClienteVentanaUsuario;
 import datos.ConeccionMariaSQL;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -189,5 +197,44 @@ public class Controlador {
     }
     public boolean AgregarInformacionTabla(String base,String tabla,String informacion){
         return miSQL.AgregarInformacionTabla(base, tabla, informacion);
+    }
+    
+      public boolean AgregarInformacionArchivo(String base,String tabla){
+          JFileChooser archivo= new  JFileChooser();
+        int respuesta=archivo.showOpenDialog(null);
+        if(respuesta== JFileChooser.APPROVE_OPTION){
+            String url=archivo.getSelectedFile().toString();
+            System.out.println("url:"+url);
+            
+            String[] validar = url.split("[.]");
+            System.out.println(validar.length);
+            if(validar[1].equals("csv")){
+                try {
+                    String linea="";
+                    BufferedReader br = new BufferedReader(new FileReader(url));
+                    while((linea=br.readLine())!=null){
+                        AgregarInformacionTabla(base, tabla, "("+linea+");");
+                        
+                    }
+                    
+                    br.close();
+                } catch (FileNotFoundException ex) {
+                    System.out.println(ex.toString());
+                } catch (IOException ex) {
+                    Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }else{
+                JOptionPane.showMessageDialog(null,"El archivo tiene que ser .csv");
+                return false;
+            }
+            
+            
+            
+        }else{
+            JOptionPane.showMessageDialog(null,"Se cancelo la seleccion de archivo");
+            return false;
+        }
+        
+        return true;
     }
 }

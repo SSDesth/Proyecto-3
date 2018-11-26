@@ -761,11 +761,9 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jcbBaseArchivoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        /*JFileChooser temp = new JFileChooser();
-        temp.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        File archivo =temp.getSelectedFile();*/
-        // System.out.println(archivo.toPath());
-       
+        String Base= jcbBaseArchivo.getItemAt(jcbBaseArchivo.getSelectedIndex());
+        String tabla = jcbTablaArchivo.getItemAt(jcbTablaArchivo.getSelectedIndex());
+        main.miControlador.AgregarInformacionArchivo(Base, tabla);
        
     }//GEN-LAST:event_jButton1ActionPerformed
 
