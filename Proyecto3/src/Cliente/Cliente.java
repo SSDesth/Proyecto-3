@@ -150,7 +150,7 @@ public class Cliente {
                 if (entrada.readInt() == 1) {
                     System.out.println("Admin Aceptado");
                     String EntadaUsuarios = entrada.readUTF();
-                    String[] ListaUsuarios= EntadaUsuarios.split(",");
+                    String[] ListaUsuarios = EntadaUsuarios.split(",");
                     System.out.println(ListaUsuarios);
                     micontrolador.VentanaAdmin(ListaUsuarios);
                 } else {
@@ -219,7 +219,7 @@ public class Cliente {
 
             salida.writeInt(3);
             salida.writeUTF(eUsuario);
-            
+
             if (entrada.readInt() == 1) {
                 System.out.println("Usuario Eliminado");
                 main.miControlador.EliminarUsuarioAceptado();

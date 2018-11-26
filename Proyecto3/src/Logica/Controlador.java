@@ -9,6 +9,8 @@ import Cliente.Cliente;
 import UI.FrmClienteAdmin;
 import UI.FrmClienteLogin;
 import UI.FrmClienteVentanaUsuario;
+import datos.ConeccionMariaSQL;
+import java.util.*;
 import javax.swing.JFrame;
 
 /**
@@ -17,9 +19,11 @@ import javax.swing.JFrame;
  */
 public class Controlador {
     private JFrame miVentana;
+    private ConeccionMariaSQL miSQL;
     
     
     public Controlador() {
+        miSQL= new ConeccionMariaSQL();
     }
     
     
@@ -85,5 +89,30 @@ public class Controlador {
         FrmClienteLogin temp = new FrmClienteLogin();
         temp.setVisible(true);
         miVentana = temp;
+    }
+    
+    public boolean AgregarDatabase(String nombre){
+        return miSQL.CrearBase(nombre);
+    
+    }
+    
+    public List<String> MostrarBases(){
+        List<String> salida= new ArrayList();
+        String bases= miSQL.MostrarBases();
+        String[] temporal= bases.split(",");
+        for(String aux:temporal){
+            if(!aux.equals("information_schema") ||
+                    !aux.equals("mysql") ||
+                    !aux.equals("performance_schema") ||
+                    !aux.equals("sys") ){
+                salida.add(aux);
+            }
+        }
+        
+        return salida;
+    }
+    
+    public boolean AgregarTabla(String base,String tabla){
+        return miSQL.CrearTabla(base, tabla);
     }
 }

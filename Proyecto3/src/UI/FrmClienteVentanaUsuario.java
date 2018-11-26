@@ -5,17 +5,24 @@
  */
 package UI;
 
+import Logica.main;
+import java.util.*;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author SSDesth
  */
 public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
 
+    List<String> listaComandosCammp = new ArrayList();
+
     /**
      * Creates new form FrmClienteVentanaUsuario
      */
     public FrmClienteVentanaUsuario() {
         initComponents();
+        CargarVentana();
     }
 
     /**
@@ -27,21 +34,262 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jtfNombreBase = new javax.swing.JTextField();
+        btnAgregarBase = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jtfNombreTabla = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jtfNombreCampo = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jcbTipoDato = new javax.swing.JComboBox<>();
+        jcbObligatorio = new javax.swing.JCheckBox();
+        jLabel8 = new javax.swing.JLabel();
+        jcbTablaBaseDestino = new javax.swing.JComboBox<>();
+        btnAgregarCampo = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtaCamposTabla = new javax.swing.JTextArea();
+        btnAgregarTabla = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel2.setBackground(new java.awt.Color(226, 226, 226));
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Crear Base de Datos");
+
+        jLabel2.setText("Nombre de La Base:");
+
+        btnAgregarBase.setText("Agregar BAse de Datos");
+        btnAgregarBase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarBaseActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jtfNombreBase)
+                    .addComponent(btnAgregarBase, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jtfNombreBase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnAgregarBase)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(226, 226, 226));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Crear Tabla");
+
+        jLabel4.setText("Nombre de la Tabla");
+
+        jLabel5.setText("Estructura de la Tabla:");
+
+        jLabel6.setText("Nombre:");
+
+        jLabel7.setText("Tipo Dato:");
+
+        jcbTipoDato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jcbObligatorio.setText("Requerido");
+
+        jLabel8.setText("Base de Datos:");
+
+        jcbTablaBaseDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        btnAgregarCampo.setText("Agregar Campo");
+        btnAgregarCampo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarCampoActionPerformed(evt);
+            }
+        });
+
+        jtaCamposTabla.setEditable(false);
+        jtaCamposTabla.setColumns(20);
+        jtaCamposTabla.setRows(5);
+        jScrollPane1.setViewportView(jtaCamposTabla);
+
+        btnAgregarTabla.setText("Agregar Tabla");
+        btnAgregarTabla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarTablaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jtfNombreTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jcbTablaBaseDestino, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jcbObligatorio)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jtfNombreCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel7)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jcbTipoDato, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(12, 12, 12))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAgregarCampo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAgregarTabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26))))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtfNombreTabla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcbTablaBaseDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jtfNombreCampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(jcbTipoDato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jcbObligatorio)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnAgregarCampo)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAgregarTabla)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(106, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("CrearBase/CrearTabla/EliminarTabla", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAgregarBaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarBaseActionPerformed
+        if (!jtfNombreBase.getText().equals("")) {
+
+            if (main.miControlador.AgregarDatabase(jtfNombreBase.getText())) {
+                JOptionPane.showMessageDialog(this, "Base de datos creada exitosamente");
+                jtfNombreBase.setText("");
+
+            } else {
+                JOptionPane.showMessageDialog(this, "No se pudo Crear la base de datos", "Alerta", 2);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "No se puede crear una \n"
+                    + "Base de datos sin nombre", "Alerta", 2);
+        }
+
+    }//GEN-LAST:event_btnAgregarBaseActionPerformed
+
+    private void btnAgregarCampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCampoActionPerformed
+        String Campo = "";
+        if (ValidarAgregarCampoTabla()) {
+            Campo = CrearComandoCampo();
+            jtaCamposTabla.setText(jtaCamposTabla.getText() + Campo + "\n");
+            listaComandosCammp.add(Campo);
+            jtfNombreCampo.setText("");
+            jcbObligatorio.setSelected(false);
+
+        }
+
+
+    }//GEN-LAST:event_btnAgregarCampoActionPerformed
+
+    private void btnAgregarTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarTablaActionPerformed
+        String comando = "";
+
+        comando = CrearComandoTabla();
+
+        System.out.println(comando);
+        if(main.miControlador.AgregarTabla(jcbTablaBaseDestino.getItemAt(
+                jcbTablaBaseDestino.getSelectedIndex()), comando)){
+            JOptionPane.showMessageDialog(this,"tabla agregada exitosamente");
+        }
+
+    }//GEN-LAST:event_btnAgregarTablaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,6 +326,123 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
         });
     }
 
+    public void CargarVentana() {
+        jcbTipoDato.removeAllItems();
+        jcbTipoDato.addItem("Int");
+        jcbTipoDato.addItem("String");
+        jcbTipoDato.addItem("Logico");
+        jcbTipoDato.addItem("Float");
+
+        CargarBases();
+
+    }
+
+    public boolean ValidarAgregarTabla() {
+        if (jtfNombreTabla.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "El nombre de la tabla\n"
+                    + " Es Obligatorio de ser rellenado", "Alerta", 2);
+            return false;
+        }
+        if (listaComandosCammp.size() < 2) {
+            JOptionPane.showMessageDialog(this, "Los Campos de la tabla\n"
+                    + "Deben contar con un minimo de 2", "Alerta", 2);
+            return false;
+        }
+
+        return true;
+    }
+
+    public boolean ValidarAgregarCampoTabla() {
+
+        if (jtfNombreCampo.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "El nombre del campo\n"
+                    + " Es Obligatorio de ser rellenado", "Alerta", 2);
+            return false;
+        }
+        for (String temp : listaComandosCammp) {
+            String[] aux = temp.split(" ");
+            if (aux[0].equals(jtfNombreCampo.getText())) {
+                JOptionPane.showMessageDialog(this, "El nombre del campo\n"
+                        + " No puede estar repetido", "Alerta", 2);
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public String CrearComandoCampo() {
+        String salida = "";
+        salida += jtfNombreCampo.getText() + " ";
+        switch (jcbTipoDato.getItemAt(jcbTipoDato.getSelectedIndex())) {
+            case "Int":
+                salida += "int";
+                break;
+            case "String":
+                salida += "varchar(255)";
+                break;
+            case "Logico":
+                salida += "int ";
+                break;
+            case "Float":
+                salida += "int ";
+                break;
+        }
+
+        if (jcbObligatorio.isSelected()) {
+            salida += " NOT NULL";
+        }
+
+        System.out.println(salida);
+        return salida;
+    }
+
+    public String CrearComandoTabla() {
+        String salida = "";
+        salida += jtfNombreTabla.getText() + " (";
+
+        for (int i = 0; i < listaComandosCammp.size(); i++) {
+            salida += listaComandosCammp.get(i);
+            if (i != (listaComandosCammp.size() - 1)) {
+                salida += ", ";
+            }
+        }
+        salida += ");";
+        return salida;
+    }
+
+    public void CargarBases() {
+        List<String> temp = main.miControlador.MostrarBases();
+        jcbTablaBaseDestino.removeAllItems();
+
+        for (String aux : temp) {
+            jcbTablaBaseDestino.addItem(aux);
+        }
+
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarBase;
+    private javax.swing.JButton btnAgregarCampo;
+    private javax.swing.JButton btnAgregarTabla;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JCheckBox jcbObligatorio;
+    private javax.swing.JComboBox<String> jcbTablaBaseDestino;
+    private javax.swing.JComboBox<String> jcbTipoDato;
+    private javax.swing.JTextArea jtaCamposTabla;
+    private javax.swing.JTextField jtfNombreBase;
+    private javax.swing.JTextField jtfNombreCampo;
+    private javax.swing.JTextField jtfNombreTabla;
     // End of variables declaration//GEN-END:variables
 }
