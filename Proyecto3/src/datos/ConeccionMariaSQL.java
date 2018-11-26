@@ -112,4 +112,46 @@ public class ConeccionMariaSQL {
         //System.out.println(Salida);
         return Salida;
     }
+    
+    public boolean AgregarInformacionTabla(String nombreBase,String tabla,
+            String informacion){
+        
+        String comando="INSERT INTO ";
+        comando+=tabla+" VALUES ";
+        comando+= informacion;
+        return ConeccionMaria(comando, nombreBase);
+        
+    }
+    
+    public boolean EliminarTabla(String nombreBase,String nombreTabla){
+        
+        String comando="DROP TABLE "+nombreTabla+";";
+        return ConeccionMaria(comando,nombreBase);
+        
+    }
+    
+    
+    public boolean CambiarNombre(String nombreBase,String nombreTabla,String nuevoNombre){
+        String comando="RENAME TABLE "+ nombreTabla+" TO "+nuevoNombre+";";
+        return ConeccionMaria(comando, nombreBase);
+    }
+    
+    public String EstructuraTabla(String base,String tabla,String consulta){
+        
+        String comando="SHOW COLUMNS FROM "+ tabla+";";
+        
+        try {
+            /*
+                Type da el tipo de campo
+                Null da si o no si el campo es requerido
+             */
+            return ConeccionMariaDatos(comando, base, consulta);
+        } catch (SQLException ex) {
+            Logger.getLogger(ConeccionMariaSQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "";
+    }
+    
+    
+    
 }

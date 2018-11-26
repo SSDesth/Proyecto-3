@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 
 public class main {
 
@@ -14,15 +15,20 @@ public class main {
 
     public static void main(String[] args) {
         
-            /*  miControlador = new Controlador();
+              miControlador = new Controlador();
             miControlador.IniciarPrograma();
-             */
+          
             //SE CREA LA CONECCION CON LA BASE DE DATOS
             
             ConeccionMariaSQL bd= new ConeccionMariaSQL();
-            System.out.println(bd.CrearBase("bd1"));
+           // System.out.println(bd.CrearBase("bd1"));
             System.out.println(bd.MostrarBases());
             System.out.println(bd.mostrarTablas("bd1"));
+            
+            //System.out.println(bd.AgregarInformacionTabla("bd1", "persona", 
+                    //"('nombre',1)"));
+           
+           System.out.println(bd.EstructuraTabla("bd1","tablita","Field"));
     }
 
 }

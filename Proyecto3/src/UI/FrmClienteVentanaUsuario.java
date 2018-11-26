@@ -6,7 +6,9 @@
 package UI;
 
 import Logica.main;
+import java.io.File;
 import java.util.*;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 /**
@@ -57,6 +59,43 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jtaCamposTabla = new javax.swing.JTextArea();
         btnAgregarTabla = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jcbBaseEliminar = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        jcbEliminarTabla = new javax.swing.JComboBox<>();
+        btnEliminarTabla = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jcbBaseCabiarNombre = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
+        jcbTablaCambiarNombre = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
+        jtfCambiarNombreNombre = new javax.swing.JTextField();
+        btnCambiarNombre = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jcbTablaRegistroManual = new javax.swing.JComboBox<>();
+        jcbBaseRegistroManual = new javax.swing.JComboBox<>();
+        jLabel18 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jtaEstructura = new javax.swing.JTextArea();
+        jLabel19 = new javax.swing.JLabel();
+        jtfDatosRegistroManual = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        btnAgregarManualRegistro = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jcbBaseArchivo = new javax.swing.JComboBox<>();
+        jcbTablaArchivo = new javax.swing.JComboBox<>();
+        jLabel23 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -170,7 +209,7 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
                                         .addComponent(jLabel7)
                                         .addGap(18, 18, 18)
                                         .addComponent(jcbTipoDato, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(0, 9, Short.MAX_VALUE)))
                         .addGap(12, 12, 12))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,9 +247,72 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
                         .addComponent(btnAgregarCampo)
                         .addGap(18, 18, 18)
                         .addComponent(btnAgregarTabla)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
+                        .addGap(0, 68, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1))
                 .addContainerGap())
+        );
+
+        jPanel4.setBackground(new java.awt.Color(226, 226, 226));
+
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Eliminar Tabla");
+
+        jLabel10.setText("Base:");
+
+        jcbBaseEliminar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcbBaseEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbBaseEliminarActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Tabla:");
+
+        jcbEliminarTabla.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        btnEliminarTabla.setText("Eliminar Base");
+        btnEliminarTabla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarTablaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addGap(18, 18, 18)
+                        .addComponent(jcbBaseEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(18, 18, 18)
+                        .addComponent(jcbEliminarTabla, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnEliminarTabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jcbBaseEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jcbEliminarTabla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnEliminarTabla)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -218,30 +320,302 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("CrearBase/CrearTabla/EliminarTabla", jPanel1);
 
+        jPanel6.setBackground(new java.awt.Color(226, 226, 226));
+
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Cambiar Nombre");
+
+        jLabel13.setText("Base:");
+
+        jcbBaseCabiarNombre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcbBaseCabiarNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbBaseCabiarNombreActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setText("Tabla:");
+
+        jcbTablaCambiarNombre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel15.setText("Nuevo Nombre:");
+
+        btnCambiarNombre.setText("Cambiar Nombre");
+        btnCambiarNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCambiarNombreActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCambiarNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(18, 18, 18)
+                        .addComponent(jcbBaseCabiarNombre, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtfCambiarNombreNombre))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addGap(18, 18, 18)
+                        .addComponent(jcbTablaCambiarNombre, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jcbBaseCabiarNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(jcbTablaCambiarNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jtfCambiarNombreNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnCambiarNombre)
+                .addGap(0, 12, Short.MAX_VALUE))
+        );
+
+        jPanel7.setBackground(new java.awt.Color(226, 226, 226));
+
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("Insertar Registro Manualmente");
+
+        jLabel17.setText("Tabla:");
+
+        jcbTablaRegistroManual.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcbTablaRegistroManual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbTablaRegistroManualActionPerformed(evt);
+            }
+        });
+
+        jcbBaseRegistroManual.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcbBaseRegistroManual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbBaseRegistroManualActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setText("Base:");
+
+        jtaEstructura.setEditable(false);
+        jtaEstructura.setColumns(20);
+        jtaEstructura.setRows(5);
+        jScrollPane2.setViewportView(jtaEstructura);
+
+        jLabel19.setText("Datos A Ingresar:");
+
+        jLabel20.setBackground(new java.awt.Color(120, 139, 244));
+        jLabel20.setForeground(new java.awt.Color(80, 109, 231));
+        jLabel20.setText("int:1 - String:'Texto' - boolean:true/flase - float: 2.0");
+
+        btnAgregarManualRegistro.setText("Agregar Registro");
+        btnAgregarManualRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarManualRegistroActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Cancelar");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
+                                .addGroup(jPanel7Layout.createSequentialGroup()
+                                    .addComponent(jLabel19)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jLabel20))
+                                .addComponent(jtfDatosRegistroManual))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(btnAgregarManualRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addGap(0, 6, Short.MAX_VALUE)
+                        .addComponent(jLabel18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jcbBaseRegistroManual, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel17)
+                        .addGap(33, 33, 33)
+                        .addComponent(jcbTablaRegistroManual, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(78, 78, 78)))
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(jLabel16)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(jcbTablaRegistroManual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcbBaseRegistroManual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jtfDatosRegistroManual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAgregarManualRegistro)
+                    .addComponent(jButton2))
+                .addGap(0, 19, Short.MAX_VALUE))
+        );
+
+        jPanel8.setBackground(new java.awt.Color(226, 226, 226));
+
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("Insertar Registro Archivo");
+
+        jLabel22.setText("Base:");
+
+        jcbBaseArchivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcbBaseArchivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbBaseArchivoActionPerformed(evt);
+            }
+        });
+
+        jcbTablaArchivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel23.setText("Tabla:");
+
+        jButton1.setText("Cargar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel22)
+                        .addGap(18, 18, 18)
+                        .addComponent(jcbBaseArchivo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel23)
+                        .addGap(18, 18, 18)
+                        .addComponent(jcbTablaArchivo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addComponent(jLabel21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(jcbBaseArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(jcbTablaArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(0, 32, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(12, 12, 12))
+        );
+
+        jTabbedPane1.addTab("CambiarNombre/Mantenimiento de datos", jPanel5);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 824, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -253,6 +627,7 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
             if (main.miControlador.AgregarDatabase(jtfNombreBase.getText())) {
                 JOptionPane.showMessageDialog(this, "Base de datos creada exitosamente");
                 jtfNombreBase.setText("");
+                CargarBases();
 
             } else {
                 JOptionPane.showMessageDialog(this, "No se pudo Crear la base de datos", "Alerta", 2);
@@ -280,16 +655,119 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
 
     private void btnAgregarTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarTablaActionPerformed
         String comando = "";
+        if (ValidarAgregarTabla()) {
+            comando = CrearComandoTabla();
 
-        comando = CrearComandoTabla();
-
-        System.out.println(comando);
-        if(main.miControlador.AgregarTabla(jcbTablaBaseDestino.getItemAt(
-                jcbTablaBaseDestino.getSelectedIndex()), comando)){
-            JOptionPane.showMessageDialog(this,"tabla agregada exitosamente");
+            System.out.println(comando);
+            if (main.miControlador.AgregarTabla(jcbTablaBaseDestino.getItemAt(
+                    jcbTablaBaseDestino.getSelectedIndex()), comando)) {
+                JOptionPane.showMessageDialog(this, "tabla agregada exitosamente");
+                listaComandosCammp = new ArrayList();
+                jtfNombreTabla.setText("");
+                CargarBases();
+            }
         }
 
+
     }//GEN-LAST:event_btnAgregarTablaActionPerformed
+
+    private void jcbBaseEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbBaseEliminarActionPerformed
+        if (jcbBaseEliminar.getItemCount() > 0) {
+            CargarEliminarTablas();
+            System.out.println("Wereck");
+        }
+    }//GEN-LAST:event_jcbBaseEliminarActionPerformed
+
+    private void btnEliminarTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarTablaActionPerformed
+
+        String base = jcbBaseEliminar.getItemAt(jcbBaseEliminar.getSelectedIndex());
+        String tabla = jcbEliminarTabla.getItemAt(jcbEliminarTabla.getSelectedIndex());
+        System.out.println("Aqui:" + tabla + "a");
+        if (!tabla.equals("")) {
+            main.miControlador.EliminarTabla(base, tabla);
+            CargarEliminarTablas();
+        } else {
+            JOptionPane.showMessageDialog(this, "No se puede eliminar una tabla si no existe",
+                    "Alerta", 2);
+        }
+
+    }//GEN-LAST:event_btnEliminarTablaActionPerformed
+
+    private void btnCambiarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarNombreActionPerformed
+        String base=jcbBaseCabiarNombre.getItemAt(jcbBaseCabiarNombre.getSelectedIndex());
+        String tabla=jcbTablaCambiarNombre.getItemAt(jcbTablaCambiarNombre.getSelectedIndex());
+        String nuevoNombre= jtfCambiarNombreNombre.getText();
+        if(ValidarCambiarNombre(base, tabla, nuevoNombre)){
+            if(main.miControlador.CambiarNombreTabla(base, tabla, nuevoNombre)){
+                JOptionPane.showMessageDialog(this, "Se pudo cambiar el nombre de la tabla");
+                CargarBases();
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"No se pudo cambiar el nombre de la tabla", "Alerta", 2);
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"Faltan datos para cambiar nombre", "Alerta", 2);
+        }
+        
+    }//GEN-LAST:event_btnCambiarNombreActionPerformed
+
+    private void jcbBaseCabiarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbBaseCabiarNombreActionPerformed
+         if (jcbBaseEliminar.getItemCount() > 0) {
+            CargarCambiarNombreTablas();
+            System.out.println("Wereck");
+        }
+        
+        
+    }//GEN-LAST:event_jcbBaseCabiarNombreActionPerformed
+
+    private void jcbBaseRegistroManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbBaseRegistroManualActionPerformed
+        if (jcbBaseRegistroManual.getItemCount() > 0) {
+            CargarRegistromanualTablas();
+        }
+        
+    }//GEN-LAST:event_jcbBaseRegistroManualActionPerformed
+
+    private void jcbTablaRegistroManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbTablaRegistroManualActionPerformed
+       String Base= jcbBaseRegistroManual.getItemAt(jcbBaseRegistroManual.getSelectedIndex());
+       String tabla = jcbTablaRegistroManual.getItemAt(jcbTablaRegistroManual.getSelectedIndex());
+        System.out.println("sas"+tabla);
+       if(tabla!= null){
+        jtaEstructura.setText(main.miControlador.MostrarEstructura(Base, tabla));
+       }
+    }//GEN-LAST:event_jcbTablaRegistroManualActionPerformed
+
+    private void btnAgregarManualRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarManualRegistroActionPerformed
+        String temporal=jtfDatosRegistroManual.getText();
+        String Base= jcbBaseRegistroManual.getItemAt(jcbBaseRegistroManual.getSelectedIndex());
+        String tabla = jcbTablaRegistroManual.getItemAt(jcbTablaRegistroManual.getSelectedIndex());
+       
+        if(!temporal.equals("")){
+            String comando = "("+temporal+")";
+            main.miControlador.AgregarInformacionTabla(Base, tabla, comando);
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_btnAgregarManualRegistroActionPerformed
+
+    private void jcbBaseArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbBaseArchivoActionPerformed
+        if (jcbBaseArchivo.getItemCount() > 0) {
+            CargarRegistroArchivolTablas();
+            
+            
+        }
+    }//GEN-LAST:event_jcbBaseArchivoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        /*JFileChooser temp = new JFileChooser();
+        temp.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        File archivo =temp.getSelectedFile();*/
+        // System.out.println(archivo.toPath());
+       
+       
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -381,10 +859,10 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
                 salida += "varchar(255)";
                 break;
             case "Logico":
-                salida += "int ";
+                salida += "boolean";
                 break;
             case "Float":
-                salida += "int ";
+                salida += "FLOAT(8,4)";
                 break;
         }
 
@@ -413,34 +891,140 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
     public void CargarBases() {
         List<String> temp = main.miControlador.MostrarBases();
         jcbTablaBaseDestino.removeAllItems();
-
+        jcbBaseEliminar.removeAllItems();
+        jcbBaseCabiarNombre.removeAllItems();
+        jcbBaseRegistroManual.removeAllItems();
+        jcbBaseArchivo.removeAllItems();
+        
         for (String aux : temp) {
             jcbTablaBaseDestino.addItem(aux);
+            jcbBaseEliminar.addItem(aux);
+            jcbBaseCabiarNombre.addItem(aux);
+            jcbBaseRegistroManual.addItem(aux);
+            jcbBaseArchivo.addItem(aux);
         }
 
+    }
+
+    public void CargarEliminarTablas() {
+        String base = jcbBaseEliminar.getItemAt(jcbBaseEliminar.getSelectedIndex());
+
+        jcbEliminarTabla.removeAllItems();
+
+        List<String> tablas = main.miControlador.MostrarTablas(base);
+
+        for (String temp : tablas) {
+            jcbEliminarTabla.addItem(temp);
+        }
+    }
+
+    public void CargarCambiarNombreTablas() {
+
+        String base = jcbBaseCabiarNombre.getItemAt(jcbBaseCabiarNombre.getSelectedIndex());
+
+        jcbTablaCambiarNombre.removeAllItems();
+
+        List<String> tablas = main.miControlador.MostrarTablas(base);
+
+        for (String temp : tablas) {
+            jcbTablaCambiarNombre.addItem(temp);
+        }
+        
+    }
+
+    public void CargarRegistromanualTablas() {
+
+        String base = jcbBaseRegistroManual.getItemAt(jcbBaseRegistroManual.getSelectedIndex());
+
+        jcbTablaRegistroManual.removeAllItems();
+
+        List<String> tablas = main.miControlador.MostrarTablas(base);
+
+        for (String temp : tablas) {
+            jcbTablaRegistroManual.addItem(temp);
+        }
+        
+    }
+
+    public void CargarRegistroArchivolTablas() {
+
+        String base = jcbBaseArchivo.getItemAt(jcbBaseArchivo.getSelectedIndex());
+
+        jcbTablaArchivo.removeAllItems();
+
+        List<String> tablas = main.miControlador.MostrarTablas(base);
+
+        for (String temp : tablas) {
+            jcbTablaArchivo.addItem(temp);
+        }
+        
+    }
+    
+    public boolean ValidarCambiarNombre(String base,String nombre, String nuevoNombre){
+        if(base.equals("")||nombre.equals("")||nuevoNombre.equals("")){
+            return false;
+        }
+        return true;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarBase;
     private javax.swing.JButton btnAgregarCampo;
+    private javax.swing.JButton btnAgregarManualRegistro;
     private javax.swing.JButton btnAgregarTabla;
+    private javax.swing.JButton btnCambiarNombre;
+    private javax.swing.JButton btnEliminarTabla;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JComboBox<String> jcbBaseArchivo;
+    private javax.swing.JComboBox<String> jcbBaseCabiarNombre;
+    private javax.swing.JComboBox<String> jcbBaseEliminar;
+    private javax.swing.JComboBox<String> jcbBaseRegistroManual;
+    private javax.swing.JComboBox<String> jcbEliminarTabla;
     private javax.swing.JCheckBox jcbObligatorio;
+    private javax.swing.JComboBox<String> jcbTablaArchivo;
     private javax.swing.JComboBox<String> jcbTablaBaseDestino;
+    private javax.swing.JComboBox<String> jcbTablaCambiarNombre;
+    private javax.swing.JComboBox<String> jcbTablaRegistroManual;
     private javax.swing.JComboBox<String> jcbTipoDato;
     private javax.swing.JTextArea jtaCamposTabla;
+    private javax.swing.JTextArea jtaEstructura;
+    private javax.swing.JTextField jtfCambiarNombreNombre;
+    private javax.swing.JTextField jtfDatosRegistroManual;
     private javax.swing.JTextField jtfNombreBase;
     private javax.swing.JTextField jtfNombreCampo;
     private javax.swing.JTextField jtfNombreTabla;
