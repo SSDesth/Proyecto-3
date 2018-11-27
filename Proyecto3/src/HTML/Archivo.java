@@ -45,4 +45,29 @@ public class Archivo {
             System.out.println("No se encontro el archivo");
         }
     }
+    
+    public Archivo(String tabla,String info){
+        
+        texto = "<center><h1>Reporte de Tablas</h1></center>"
+            + "<div><h2>Nombre de la tabla: </h2>"
+            + "<p>" +tabla+" </p></div>"
+            + "<div><footer><p><h4>Informacion de la tabla: </h4>"
+            +  info + "<br />"
+            + "</p></footer></div>";
+        
+        Fecha objFecha = new Fecha();
+        String fecha = objFecha.getFechaCreacion();
+        String hora = objFecha.getHoraCreacion();
+        
+        String nombre = "reporte "+fecha+" a las "+hora+".html";
+        
+        try{
+            archivo = new FileOutputStream(nombre);
+            p = new PrintStream(archivo);
+            p.println(texto);
+            p.close();
+        } catch (FileNotFoundException e){
+            System.out.println("No se encontro el archivo");
+        }
+    }
 }

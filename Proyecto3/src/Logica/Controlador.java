@@ -205,6 +205,14 @@ public class Controlador {
         return miSQL.EliminarRegistro(base, tabla, texto);
     }
     
+    public String OrdenarRegistroTabla(String base,String tabla,String texto){
+        return miSQL.OrdenarRegistros(base, tabla, texto);
+    }
+    
+    public String TodosLosDatosTabla(String base,String tabla) throws SQLException{
+        return miSQL.SeleccionarTodosLosDatos(base, tabla);
+    }
+    
     public boolean CambiarNombreTabla(String base,String tabla,String nuevoNombre){
         return miSQL.CambiarNombre(base, tabla, nuevoNombre);
     }

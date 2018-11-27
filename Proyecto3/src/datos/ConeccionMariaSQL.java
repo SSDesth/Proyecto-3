@@ -241,5 +241,17 @@ public class ConeccionMariaSQL {
         return salida;    
     }
     
-    
+    public String OrdenarRegistros(String base,String tabla,String texto){
+        String salida="";
+        String comando = "ALTER TABLE " + tabla +" "+texto+";";
+        ConeccionMaria(comando, base);
+        try {
+            salida=SeleccionarTodosLosDatos(base, tabla);
+        } catch (SQLException ex) {
+            Logger.getLogger(ConeccionMariaSQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return salida;
+        
+    }
 }
