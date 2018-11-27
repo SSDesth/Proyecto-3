@@ -1272,6 +1272,13 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
             String tabla = jcbEliminarRegistrosTabla1.getItemAt(jcbEliminarRegistrosTabla1.getSelectedIndex());
             JOptionPane.showMessageDialog(this, "Se intentara generar un html de la tabla:"+tabla);
             String info=main.miControlador.TodosLosDatosTabla(Base, tabla);
+            String[] temp= info.split("\n");
+            System.out.println(temp.length);
+            info="Estructura: <br/>"+main.miControlador.MostrarEstructura(Base, tabla)+"<br/>"
+                    + "<br/>Informacion:<br/>";
+            for(String aux:temp){
+                info+=aux+"<br/>";
+            }
             
             Archivo nuevo = new Archivo(tabla, info);
         } catch (SQLException ex) {
