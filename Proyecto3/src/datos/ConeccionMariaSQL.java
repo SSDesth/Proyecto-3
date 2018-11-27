@@ -1,6 +1,7 @@
 package datos;
 
 import Logica.main;
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -152,6 +153,44 @@ public class ConeccionMariaSQL {
         return "";
     }
     
+    
+    public String SeleccionarDatos(String base,String tabla,String texto) throws SQLException{
+        
+        String comando = "SELECT * FROM " + tabla +" "+texto;
+        String estructura = EstructuraTabla(base, tabla, "Field");
+        String[] listacampos =estructura.split(",");
+       //     
+        
+       
+        String busqueda=ConeccionMariaDatos(comando, base, listacampos[0]);
+        String[] auxiliar = new String[busqueda.split(",").length];
+        System.out.println("aqui1");
+        int j=0;
+        for(String temp:listacampos){
+                busqueda=ConeccionMariaDatos(comando, base, temp);
+                String[] respuestas =busqueda.split(",");
+                System.out.println("aqui2");
+                for(int i = 0; i<respuestas.length;i++){
+                    if(auxiliar[i]==null){
+                        auxiliar[i]=respuestas[i];
+                    }
+                    else{
+                        auxiliar[i]+=respuestas[i];
+                    }
+                    
+                    if(j != listacampos.length-1){
+                        auxiliar[i]+=",";
+                    }
+                }
+                j++;
+            }
+        String salida="";
+        for(String temp2:auxiliar){
+            salida+=temp2+"\n";
+        }
+        
+        return salida;
+    }
     
     
 }

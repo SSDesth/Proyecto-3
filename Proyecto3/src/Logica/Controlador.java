@@ -14,6 +14,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -104,6 +105,14 @@ public class Controlador {
     
     }
     
+    public String[] MostrarEstructuratabla(String Base,String tabla){
+        String[] salida;
+        String nombre = miSQL.EstructuraTabla(Base, tabla,"Field");
+        salida=nombre.split(",");
+        return salida;
+    }
+        
+        
     public String MostrarEstructura(String Base,String tabla){
         String salida= "";
         String nombre = miSQL.EstructuraTabla(Base, tabla,"Field");
@@ -236,5 +245,14 @@ public class Controlador {
         }
         
         return true;
+    }
+      
+    public String SeleccionarDatos(String base,String tabla,String info){
+        try {
+            return miSQL.SeleccionarDatos(base, tabla, info);
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+            return "";
+        }
     }
 }

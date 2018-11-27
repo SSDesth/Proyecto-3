@@ -96,6 +96,23 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
         jcbTablaArchivo = new javax.swing.JComboBox<>();
         jLabel23 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jcbBaseSeleccion = new javax.swing.JComboBox<>();
+        jLabel26 = new javax.swing.JLabel();
+        jcbTablaSeleccion = new javax.swing.JComboBox<>();
+        jLabel27 = new javax.swing.JLabel();
+        jcbSeleccionarEspacio = new javax.swing.JComboBox<>();
+        jcbSeleccionarCondicion = new javax.swing.JComboBox<>();
+        jtfbusqueda = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jtaSeleccionarResultado = new javax.swing.JTextArea();
+        jButton3 = new javax.swing.JButton();
+        btnSeleccionarLimpiar = new javax.swing.JButton();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -247,7 +264,7 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
                         .addComponent(btnAgregarCampo)
                         .addGap(18, 18, 18)
                         .addComponent(btnAgregarTabla)
-                        .addGap(0, 68, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1))
                 .addContainerGap())
         );
@@ -330,12 +347,14 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 80, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("CrearBase/CrearTabla/EliminarTabla", jPanel1);
@@ -571,7 +590,118 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
                     .addComponent(jcbTablaArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addGap(0, 32, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
+        );
+
+        jPanel9.setBackground(new java.awt.Color(226, 226, 226));
+
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("Seleccionar Datos");
+
+        jLabel25.setText("Base:");
+
+        jcbBaseSeleccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcbBaseSeleccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbBaseSeleccionActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setText("Tabla:");
+
+        jcbTablaSeleccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcbTablaSeleccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbTablaSeleccionActionPerformed(evt);
+            }
+        });
+
+        jLabel27.setText("Condicion");
+
+        jcbSeleccionarEspacio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jcbSeleccionarCondicion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jtaSeleccionarResultado.setEditable(false);
+        jtaSeleccionarResultado.setColumns(20);
+        jtaSeleccionarResultado.setRows(5);
+        jScrollPane3.setViewportView(jtaSeleccionarResultado);
+
+        jButton3.setText("Buscar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        btnSeleccionarLimpiar.setText("Limpiar");
+        btnSeleccionarLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionarLimpiarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSeleccionarLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(jLabel25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jcbBaseSeleccion, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(jLabel27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jcbSeleccionarEspacio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel26))
+                            .addComponent(jcbSeleccionarCondicion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(jcbTablaSeleccion, 0, 187, Short.MAX_VALUE)
+                                .addGap(12, 12, 12))
+                            .addComponent(jtfbusqueda))))
+                .addContainerGap())
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addComponent(jLabel24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(jcbTablaSeleccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcbBaseSeleccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(jcbSeleccionarEspacio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcbSeleccionarCondicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfbusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jButton3)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSeleccionarLimpiar))))
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -584,7 +714,9 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -594,14 +726,53 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(12, 12, 12))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("CambiarNombre/Mantenimiento de datos", jPanel5);
+
+        jPanel11.setBackground(new java.awt.Color(226, 226, 226));
+
+        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel28.setText("Eliminar Registros");
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addComponent(jLabel28)
+                .addGap(0, 156, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(251, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Eliminar/Ordenar Registros", jPanel10);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -614,7 +785,7 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -767,6 +938,46 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jcbBaseSeleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbBaseSeleccionActionPerformed
+       if (jcbBaseArchivo.getItemCount() > 0) {
+            CargarBusquedaTablas();
+        }
+       
+    }//GEN-LAST:event_jcbBaseSeleccionActionPerformed
+
+    private void jcbTablaSeleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbTablaSeleccionActionPerformed
+        
+        String Base= jcbBaseSeleccion.getItemAt(jcbBaseSeleccion.getSelectedIndex());
+        String tabla = jcbTablaSeleccion.getItemAt(jcbTablaSeleccion.getSelectedIndex());
+        if(jcbTablaSeleccion.getItemCount() > 0){
+            System.out.println("aqui"+tabla);
+            cargarEspacio(Base, tabla);
+        }
+        
+    }//GEN-LAST:event_jcbTablaSeleccionActionPerformed
+
+    private void btnSeleccionarLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarLimpiarActionPerformed
+       jtaSeleccionarResultado.setText("");
+    }//GEN-LAST:event_btnSeleccionarLimpiarActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       String info="";
+      String Espacio= jcbSeleccionarEspacio.getItemAt(jcbSeleccionarEspacio.getSelectedIndex());
+      String Base= jcbBaseSeleccion.getItemAt(jcbBaseSeleccion.getSelectedIndex());
+      String tabla = jcbTablaSeleccion.getItemAt(jcbTablaSeleccion.getSelectedIndex());
+      String texto= jtfbusqueda.getText();
+      
+      if(!texto.equals("")){
+          info = "WHERE "+ Espacio +
+                  " " + jcbSeleccionarCondicion.getItemAt(jcbSeleccionarCondicion.getSelectedIndex())+
+                  " " + texto+";";
+          jtaSeleccionarResultado.setText(main.miControlador.SeleccionarDatos(Base, tabla, info));
+          
+      }else{
+          JOptionPane.showMessageDialog(this,"Falta informacion para la busqueda");
+      }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -809,6 +1020,12 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
         jcbTipoDato.addItem("Logico");
         jcbTipoDato.addItem("Float");
 
+        jcbSeleccionarCondicion.removeAllItems();
+        jcbSeleccionarCondicion.addItem("=");
+        jcbSeleccionarCondicion.addItem("!=");
+        jcbSeleccionarCondicion.addItem("<");
+        jcbSeleccionarCondicion.addItem(">");
+        
         CargarBases();
 
     }
@@ -893,6 +1110,7 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
         jcbBaseCabiarNombre.removeAllItems();
         jcbBaseRegistroManual.removeAllItems();
         jcbBaseArchivo.removeAllItems();
+        jcbBaseSeleccion.removeAllItems();
         
         for (String aux : temp) {
             jcbTablaBaseDestino.addItem(aux);
@@ -900,6 +1118,7 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
             jcbBaseCabiarNombre.addItem(aux);
             jcbBaseRegistroManual.addItem(aux);
             jcbBaseArchivo.addItem(aux);
+            jcbBaseSeleccion.addItem(aux);
         }
 
     }
@@ -957,6 +1176,19 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
         }
         
     }
+    public void CargarBusquedaTablas() {
+
+        String base = jcbBaseSeleccion.getItemAt(jcbBaseSeleccion.getSelectedIndex());
+
+        jcbTablaSeleccion.removeAllItems();
+
+        List<String> tablas = main.miControlador.MostrarTablas(base);
+
+        for (String temp : tablas) {
+            jcbTablaSeleccion.addItem(temp);
+        }
+        
+    }
     
     public boolean ValidarCambiarNombre(String base,String nombre, String nuevoNombre){
         if(base.equals("")||nombre.equals("")||nuevoNombre.equals("")){
@@ -964,6 +1196,15 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
         }
         return true;
     }
+    
+    public void cargarEspacio(String base,String tabla){
+        String[] temp=main.miControlador.MostrarEstructuratabla(base, tabla);
+        jcbSeleccionarEspacio.removeAllItems();
+        for(String aux:temp){
+            jcbSeleccionarEspacio.addItem(aux);
+        }
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarBase;
@@ -972,8 +1213,10 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregarTabla;
     private javax.swing.JButton btnCambiarNombre;
     private javax.swing.JButton btnEliminarTabla;
+    private javax.swing.JButton btnSeleccionarLimpiar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -990,6 +1233,11 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -998,6 +1246,8 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1005,26 +1255,34 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JComboBox<String> jcbBaseArchivo;
     private javax.swing.JComboBox<String> jcbBaseCabiarNombre;
     private javax.swing.JComboBox<String> jcbBaseEliminar;
     private javax.swing.JComboBox<String> jcbBaseRegistroManual;
+    private javax.swing.JComboBox<String> jcbBaseSeleccion;
     private javax.swing.JComboBox<String> jcbEliminarTabla;
     private javax.swing.JCheckBox jcbObligatorio;
+    private javax.swing.JComboBox<String> jcbSeleccionarCondicion;
+    private javax.swing.JComboBox<String> jcbSeleccionarEspacio;
     private javax.swing.JComboBox<String> jcbTablaArchivo;
     private javax.swing.JComboBox<String> jcbTablaBaseDestino;
     private javax.swing.JComboBox<String> jcbTablaCambiarNombre;
     private javax.swing.JComboBox<String> jcbTablaRegistroManual;
+    private javax.swing.JComboBox<String> jcbTablaSeleccion;
     private javax.swing.JComboBox<String> jcbTipoDato;
     private javax.swing.JTextArea jtaCamposTabla;
     private javax.swing.JTextArea jtaEstructura;
+    private javax.swing.JTextArea jtaSeleccionarResultado;
     private javax.swing.JTextField jtfCambiarNombreNombre;
     private javax.swing.JTextField jtfDatosRegistroManual;
     private javax.swing.JTextField jtfNombreBase;
     private javax.swing.JTextField jtfNombreCampo;
     private javax.swing.JTextField jtfNombreTabla;
+    private javax.swing.JTextField jtfbusqueda;
     // End of variables declaration//GEN-END:variables
 }
