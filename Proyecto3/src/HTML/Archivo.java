@@ -1,26 +1,43 @@
 
 package HTML;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.PrintStream;
+import java.time.LocalTime;
 
 /**
  *
- * @author manue
+ * @author Manuel Arias
+ * @since 25/11/18
+ * @version 1.1
  */
 public class Archivo {
     FileOutputStream archivo;
-    String texto = "<div><h1>Reporte de Tablas</h1><p>Parrafo de prueba</p></div>";
+    String texto = "<center><h1>Reporte de Tablas</h1></center>"
+            + "<div><h2>Estudiante: </h2>"
+            + "<p>Cedula: <br />"
+            + "Nombre: <br />"
+            + "Direccion: <br />"
+            + "Telefono: </p></div>"
+            + "<div><footer><p><h4>Creado por: </h4>"
+            + "-Carlos Montero <br />"
+            + "-Manuel Arias Medina <br />"
+            + "-Justin Bogantes Rodriguez</p></footer></div>";
     PrintStream p;
     
     public Archivo(){
         
         Fecha objFecha = new Fecha();
         String fecha = objFecha.getFechaCreacion();
+        String hora = objFecha.getHoraCreacion();
+        
+        String nombre = "reporte "+fecha+" a las "+hora+".html";
         
         try{
-            archivo = new FileOutputStream("reporte.html");
+            archivo = new FileOutputStream(nombre);
             p = new PrintStream(archivo);
             p.println(texto);
             p.close();
