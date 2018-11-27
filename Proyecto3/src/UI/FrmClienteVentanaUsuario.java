@@ -113,6 +113,17 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jcbEliminarRegistrosBase = new javax.swing.JComboBox<>();
+        jLabel30 = new javax.swing.JLabel();
+        jcbEliminarRegistrosTabla = new javax.swing.JComboBox<>();
+        jcbEliminarRegistrosCondicion = new javax.swing.JComboBox<>();
+        jLabel31 = new javax.swing.JLabel();
+        jtfEliminarRegistrosCondicion = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jtaEliminarRegistroResultado = new javax.swing.JTextArea();
+        jButton4 = new javax.swing.JButton();
+        jLabel32 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -742,17 +753,99 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
         jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel28.setText("Eliminar Registros");
 
+        jLabel29.setText("Base:");
+
+        jcbEliminarRegistrosBase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcbEliminarRegistrosBase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbEliminarRegistrosBaseActionPerformed(evt);
+            }
+        });
+
+        jLabel30.setText("Tabla:");
+
+        jcbEliminarRegistrosTabla.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcbEliminarRegistrosTabla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbEliminarRegistrosTablaActionPerformed(evt);
+            }
+        });
+
+        jcbEliminarRegistrosCondicion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel31.setText("Condicion");
+
+        jtaEliminarRegistroResultado.setColumns(20);
+        jtaEliminarRegistroResultado.setRows(5);
+        jScrollPane4.setViewportView(jtaEliminarRegistroResultado);
+
+        jButton4.setText("Eliminar Registro");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jLabel32.setBackground(new java.awt.Color(120, 139, 244));
+        jLabel32.setForeground(new java.awt.Color(80, 109, 231));
+        jLabel32.setText("int:1 - String:'Texto' - boolean:true/flase - float: 2.0");
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
+            .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(jLabel29)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jcbEliminarRegistrosBase, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(jLabel30)
+                                .addGap(39, 39, 39)
+                                .addComponent(jcbEliminarRegistrosTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(jLabel31)
+                                .addGap(18, 18, 18)
+                                .addComponent(jcbEliminarRegistrosCondicion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jtfEliminarRegistrosCondicion))
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel32))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addComponent(jLabel28)
-                .addGap(0, 156, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel29)
+                            .addComponent(jcbEliminarRegistrosBase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel30)
+                            .addComponent(jcbEliminarRegistrosTabla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jcbEliminarRegistrosCondicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel31)))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel32)
+                .addGap(1, 1, 1)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtfEliminarRegistrosCondicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4))
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -769,7 +862,7 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(251, Short.MAX_VALUE))
+                .addContainerGap(235, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Eliminar/Ordenar Registros", jPanel10);
@@ -978,6 +1071,37 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
       }
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jcbEliminarRegistrosBaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbEliminarRegistrosBaseActionPerformed
+        if (jcbEliminarRegistrosBase.getItemCount() > 0) {
+            CargarEliminarRegistrosTablas();
+        }
+       
+    }//GEN-LAST:event_jcbEliminarRegistrosBaseActionPerformed
+
+    private void jcbEliminarRegistrosTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbEliminarRegistrosTablaActionPerformed
+        String Base= jcbEliminarRegistrosBase.getItemAt(jcbEliminarRegistrosBase.getSelectedIndex());
+        String tabla = jcbEliminarRegistrosTabla.getItemAt(jcbEliminarRegistrosTabla.getSelectedIndex());
+        if(jcbTablaSeleccion.getItemCount() > 0){
+            System.out.println("aqui"+tabla);
+            CargarEliminarRegistroCondicion(Base, tabla);
+        }
+        
+    }//GEN-LAST:event_jcbEliminarRegistrosTablaActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        String Base= jcbEliminarRegistrosBase.getItemAt(jcbEliminarRegistrosBase.getSelectedIndex());
+        String tabla = jcbEliminarRegistrosTabla.getItemAt(jcbEliminarRegistrosTabla.getSelectedIndex());
+        String condicion = jcbEliminarRegistrosCondicion.getItemAt(jcbEliminarRegistrosCondicion.getSelectedIndex());
+        String texto = jtfEliminarRegistrosCondicion.getText();
+        String salida="";
+        if(!texto.equals("")){
+            salida="WHERE " + condicion+" = " + texto;
+        }
+        jtaEliminarRegistroResultado.setText(main.miControlador.EliminarRegistroTabla(Base, tabla, salida));
+        
+       
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1111,6 +1235,7 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
         jcbBaseRegistroManual.removeAllItems();
         jcbBaseArchivo.removeAllItems();
         jcbBaseSeleccion.removeAllItems();
+        jcbEliminarRegistrosBase.removeAllItems();
         
         for (String aux : temp) {
             jcbTablaBaseDestino.addItem(aux);
@@ -1119,6 +1244,7 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
             jcbBaseRegistroManual.addItem(aux);
             jcbBaseArchivo.addItem(aux);
             jcbBaseSeleccion.addItem(aux);
+            jcbEliminarRegistrosBase.addItem(aux);
         }
 
     }
@@ -1189,6 +1315,19 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
         }
         
     }
+    public void CargarEliminarRegistrosTablas() {
+
+        String base = jcbEliminarRegistrosBase.getItemAt(jcbEliminarRegistrosBase.getSelectedIndex());
+
+        jcbEliminarRegistrosTabla.removeAllItems();
+
+        List<String> tablas = main.miControlador.MostrarTablas(base);
+
+        for (String temp : tablas) {
+            jcbEliminarRegistrosTabla.addItem(temp);
+        }
+        
+    }
     
     public boolean ValidarCambiarNombre(String base,String nombre, String nuevoNombre){
         if(base.equals("")||nombre.equals("")||nuevoNombre.equals("")){
@@ -1205,6 +1344,14 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
         }
     }
     
+    public void CargarEliminarRegistroCondicion(String base,String tabla){
+        String[] temp=main.miControlador.MostrarEstructuratabla(base, tabla);
+        jcbEliminarRegistrosCondicion.removeAllItems();
+        for(String aux:temp){
+            jcbEliminarRegistrosCondicion.addItem(aux);
+        }
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarBase;
@@ -1217,6 +1364,7 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1238,7 +1386,11 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1259,12 +1411,16 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JComboBox<String> jcbBaseArchivo;
     private javax.swing.JComboBox<String> jcbBaseCabiarNombre;
     private javax.swing.JComboBox<String> jcbBaseEliminar;
     private javax.swing.JComboBox<String> jcbBaseRegistroManual;
     private javax.swing.JComboBox<String> jcbBaseSeleccion;
+    private javax.swing.JComboBox<String> jcbEliminarRegistrosBase;
+    private javax.swing.JComboBox<String> jcbEliminarRegistrosCondicion;
+    private javax.swing.JComboBox<String> jcbEliminarRegistrosTabla;
     private javax.swing.JComboBox<String> jcbEliminarTabla;
     private javax.swing.JCheckBox jcbObligatorio;
     private javax.swing.JComboBox<String> jcbSeleccionarCondicion;
@@ -1276,10 +1432,12 @@ public class FrmClienteVentanaUsuario extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jcbTablaSeleccion;
     private javax.swing.JComboBox<String> jcbTipoDato;
     private javax.swing.JTextArea jtaCamposTabla;
+    private javax.swing.JTextArea jtaEliminarRegistroResultado;
     private javax.swing.JTextArea jtaEstructura;
     private javax.swing.JTextArea jtaSeleccionarResultado;
     private javax.swing.JTextField jtfCambiarNombreNombre;
     private javax.swing.JTextField jtfDatosRegistroManual;
+    private javax.swing.JTextField jtfEliminarRegistrosCondicion;
     private javax.swing.JTextField jtfNombreBase;
     private javax.swing.JTextField jtfNombreCampo;
     private javax.swing.JTextField jtfNombreTabla;

@@ -159,9 +159,7 @@ public class ConeccionMariaSQL {
         String comando = "SELECT * FROM " + tabla +" "+texto;
         String estructura = EstructuraTabla(base, tabla, "Field");
         String[] listacampos =estructura.split(",");
-       //     
-        
-       
+     
         String busqueda=ConeccionMariaDatos(comando, base, listacampos[0]);
         String[] auxiliar = new String[busqueda.split(",").length];
         System.out.println("aqui1");
@@ -190,6 +188,57 @@ public class ConeccionMariaSQL {
         }
         
         return salida;
+    }
+    public String SeleccionarTodosLosDatos(String base,String tabla) throws SQLException{
+        
+        String comando = "SELECT * FROM " + tabla ;
+        String estructura = EstructuraTabla(base, tabla, "Field");
+        String[] listacampos =estructura.split(",");
+     
+        String busqueda=ConeccionMariaDatos(comando, base, listacampos[0]);
+        String[] auxiliar = new String[busqueda.split(",").length];
+        System.out.println("aqui1");
+        int j=0;
+        for(String temp:listacampos){
+                busqueda=ConeccionMariaDatos(comando, base, temp);
+                String[] respuestas =busqueda.split(",");
+                System.out.println("aqui2");
+                for(int i = 0; i<respuestas.length;i++){
+                    if(auxiliar[i]==null){
+                        auxiliar[i]=respuestas[i];
+                    }
+                    else{
+                        auxiliar[i]+=respuestas[i];
+                    }
+                    
+                    if(j != listacampos.length-1){
+                        auxiliar[i]+=",";
+                    }
+                }
+                j++;
+            }
+        String salida="";
+        for(String temp2:auxiliar){
+            salida+=temp2+"\n";
+        }
+        
+        return salida;
+    }
+    
+    public String EliminarRegistro(String base,String tabla, String texto){
+        String salida="";
+        String comando="DELETE FROM "+tabla;
+        if(!texto.equals("")){
+            comando += " "+texto;
+        }
+        comando+=";";
+        ConeccionMaria(comando, base);
+        try {
+            salida=SeleccionarTodosLosDatos(base, tabla);
+        } catch (SQLException ex) {
+            Logger.getLogger(ConeccionMariaSQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return salida;    
     }
     
     

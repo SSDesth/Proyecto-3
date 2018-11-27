@@ -201,6 +201,10 @@ public class Controlador {
         return miSQL.EliminarTabla(base, tabla);
     }
     
+    public String EliminarRegistroTabla(String base,String tabla,String texto){
+        return miSQL.EliminarRegistro(base, tabla, texto);
+    }
+    
     public boolean CambiarNombreTabla(String base,String tabla,String nuevoNombre){
         return miSQL.CambiarNombre(base, tabla, nuevoNombre);
     }
@@ -255,4 +259,6 @@ public class Controlador {
             return "";
         }
     }
+    
+   
 }
